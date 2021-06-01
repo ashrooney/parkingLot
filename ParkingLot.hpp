@@ -19,6 +19,8 @@ class ParkingLot
     }
     void parkVehicle(Person p, ParkingTicket tkt)
     {
+	for(auto floor : floors) {
+	}
         for(int i = 0;i<floors.size();i++)
         {
             ParkingFloor *currFloor = floors[i];
@@ -32,6 +34,7 @@ class ParkingLot
     }
     void unParkVehicle(Person p)
     {
+	// use range-based for loop everywhere
         for(int i = 0;i<floors.size();i++)
         {
             ParkingFloor *currFloor = floors[i];
