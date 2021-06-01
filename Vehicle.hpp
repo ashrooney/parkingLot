@@ -5,22 +5,23 @@ using namespace std;
 // namespace models
 // {
    
+// same as parking ticker
     class Vehicle
     {
         
-        private:
-        string nmPlate;
-        VehicleType typeOfVehicle;
+        const string nmPlate;
+        const VehicleType typeOfVehicle;
         public:
         // Vehicle(string nbr, VehicleType v) :nmPlate(nbr), typeOfVehicle(v) {}
-        void setType(VehicleType v)
+	Vehicle(const string& nmPlate, VehicleType typeOfVehicle) : nmPlate(nmPlate), typeOfVehicle(typeOfVehicle) {}
+        /*void setType(VehicleType v)
         {
             typeOfVehicle = v;
         }
         void setPlateNo(string n)
         {
             nmPlate = n;
-        }
+        }*/
         VehicleType getType()
         {
             return typeOfVehicle;
@@ -31,6 +32,7 @@ using namespace std;
         }
 
     };
+// if you are using polymorphism, then we don't need VehicleType variable
     // class Bus : public Vehicle{
     //     public:
     //     Bus(string type):Vehicle(type)

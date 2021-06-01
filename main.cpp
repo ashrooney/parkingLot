@@ -17,22 +17,36 @@ int main()
     // // p.setType(v);
     // cout<<p.getType()<<endl;
     ParkingLot pl(3); // parking lot of 3 floors with 10 spots in each
+    string x = "";
    
-    string str = "UP25XXX";
-    Vehicle v;
+    Vehicle v("UP25XXXX", VehicleType::CAR);
 
-     VehicleType vtype = car;
-    v.setType(vtype);
+    // TODO: never allow clients to create this
+    // you could explore private constructors and friend functions
+    // TODO: this should be done inside the ParkingLot::parkVehicle method
+    // TODO: implement the id generation using a static unsigned int
+    // whenever you create a new ticket, auto increment the static int and use
+    // the number to init new tickets
+    ParkingTicket tkt(x, 2);
+    // Check this class for ostream
+    cout<<tkt<<endl;
 
-    v.setPlateNo("UP25XXXX");
-    ParkingTicket tkt("1");
+    // TODO: this class is not required
     Person p;
     p.setName("Ashish");
     p.setType(v);
+
+    // This should return a token and use auto variables more
     pl.parkVehicle(p,tkt);
+    // TODO: implement the pending amount calculation using async when creating the ParkingLot object
+
+    // TODO: This should take in a token/token id and say, return a Vehicle, free up the spot, calculate pending amount
     pl.unParkVehicle(p);
+
+    // Implement a simple UI and store the list of tokens in main in a vector and test out cost calculations,
+    // correct vehicle etc. 
+    // OR write some use cases using std::wait in the main thread. you can check if correct time and vehicle
+    // is being returned or not. write asserts to make sure your code is working fine
    
-    
-    
     return 0;
 }
